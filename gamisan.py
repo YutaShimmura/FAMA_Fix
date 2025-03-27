@@ -21,7 +21,7 @@ try:
     api_key = st.secrets["OPENAI_API_KEY"]
     client = OpenAI(api_key=api_key)
 except KeyError:
-    st.error("APIキーが見つかりません。Secrets設定を確認してください。
+    st.error("APIキーが見つかりません。Secrets設定を確認してください。")
 
 # --- 松岡修造風コメント ---
 def get_matsuoka_comment():
