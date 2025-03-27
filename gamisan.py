@@ -16,9 +16,6 @@ load_dotenv(".env")  # .env ファイルから環境変数を読み込む
 api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
-# APIキーを表示して確認
-st.write("APIキー:", st.secrets.get("OPENAI_API_KEY", "キーが見つかりません"))
-
 # --- 松岡修造風コメント ---
 def get_matsuoka_comment():
     """ChatGPT APIを使用して松岡修造風のコメントを取得する"""
