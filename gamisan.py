@@ -16,6 +16,13 @@ load_dotenv(".env")  # .env ファイルから環境変数を読み込む
 api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
+# StreamlitのSecretsからAPIキーを取得
+try:
+    api_key = st.secrets["OPENAI_API_KEY"]
+    client = OpenAI(api_key=api_key)
+except KeyError:
+    st.error("APIキーが見つかりません。Secrets設定を確認してください。
+
 # --- 松岡修造風コメント ---
 def get_matsuoka_comment():
     """ChatGPT APIを使用して松岡修造風のコメントを取得する"""
